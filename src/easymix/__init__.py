@@ -18,14 +18,12 @@ class Track:
         if type(sound) == str:
             sound = pydub.AudioSegment.from_file(sound)
 
-        trackMs = self.track.duration_seconds * 1000
-        soundMs = sound.duration_seconds * 1000
-        positionMs = timeStamp / 1000
-        emptyDuration = positionMs + soundMs - trackMs
+        trackDuration = self.track.duration_seconds
+        soundDuration = sound.duration_seconds
+        emptyDuration = timeStamp + soundDuration - trackDuration
 
-        self.track += pydub.AudioSegment.silent(emptyDuration)
-        pos = int(timeStamp/1000)
-        self.track = self.track.overlay(sound, position=pos)
+        self.track += pydub.AudioSegment.silent(emptyDuration*1000)
+        self.track = self.track.overlay(sound, position=timeStamp*1000)
 
     def save(self, fileName):
         self.track.export(fileName)

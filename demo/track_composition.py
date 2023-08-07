@@ -7,14 +7,13 @@ import pydub
 
 
 
-milisec = 1000
 
 
 def composeTrack():
     track = mixer.Track()
-    track.addSound('01.mp3', 1000*milisec)
-    for i in range(5):
-        track.addSound('02.mp3', i*1000*milisec)
+    track.addSound('01.mp3', 1.0)
+    for t in range(5):
+        track.addSound('02.mp3', t)
 
     track.save('track.mp3')
 
@@ -24,9 +23,9 @@ def composeTrackPydub():
     sound02 = pydub.AudioSegment.from_file('02.mp3')
 
     track = mixer.Track()
-    track.addSound(sound01, 1000*milisec)
-    for i in range(5):
-        track.addSound(sound02, i*1000*milisec)
+    track.addSound(sound01, 1.0)
+    for t in range(5):
+        track.addSound(sound02, t)
 
     track.save('track_pydub.mp3')
 

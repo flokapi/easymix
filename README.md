@@ -24,9 +24,9 @@ import easymix as mixer
 
 def composeTrack():
     track = mixer.Track()
-    track.addSound('01.mp3', 1000*milisec)
-    for i in range(5):
-        track.addSound('02.mp3', i*1000*milisec)
+    track.addSound('01.mp3', 1.0)
+    for t in range(5):
+        track.addSound('02.mp3', t)
 
     track.save('track.mp3')
 ```
@@ -46,7 +46,7 @@ sound01 -= 5	# reduce 5dB
 mixer.play(sound01)
 
 ...
-track.addSound(sound01, 1000*milisec)
+track.addSound(sound01, 1.0)
 ```
 
 
