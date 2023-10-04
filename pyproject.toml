@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "easymix"
+version = "0.0.9"
+description = "Simple live and track python audio mixer"
+authors = ["flokapi <flokapi@pm.me>"]
+license = "LGPL-3.0-only"
+readme = "README.md"
+
+packages = [
+    { include = "easymix", from = "src" },
+]
+
+[tool.poetry.urls]
+homepage = "https://github.com/flokapi/easymix"
+repository = "https://github.com/flokapi/easymix"
+documentation = "https://github.com/flokapi/easymix"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pydub = "*"
+pyaudio = "*" 
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+float_to_top = true

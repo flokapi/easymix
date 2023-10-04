@@ -6,9 +6,6 @@ import pyaudio
 from threading import Thread
 from queue import SimpleQueue
 
-import time
-
-
 
 class Track:
     def __init__(self):
@@ -27,7 +24,6 @@ class Track:
 
     def save(self, fileName):
         self.track.export(fileName)
-
 
 
 class Mixer(Track, Thread):
@@ -67,10 +63,9 @@ class Mixer(Track, Thread):
             self.playChunk()
 
 
-
-
 def play(sound):
     queue.put(sound)
+
 
 def stop():
     mixer.stop()

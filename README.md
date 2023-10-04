@@ -33,7 +33,7 @@ def composeTrack():
 
 
 
-You can also define the sounds a `pydub` audio segments. It's convenient in case you need to apply effects on the sounds before playing, such as volume adjustment.
+You can also define the sounds as `pydub` audio segments. It's convenient in case you need to apply effects on the sounds before playing, such as volume adjustment.
 
 ```python
 import pydub
@@ -58,6 +58,6 @@ track.addSound(sound01, 1.0)
 Install pip package
 
 ```
-pip3 install easymixer
+pip3 install easymix
 ```
 
