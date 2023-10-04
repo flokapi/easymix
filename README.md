@@ -61,3 +61,13 @@ Install pip package
 pip3 install easymix
 ```
 
+
+
+
+
+# Known issues
+
+This is only a prototype. Beware of the following issues which require proper investigation:
+
+1. The `pyaudio` package installation fails with Python 3.11.4, but works with Python 3.9.2.
+2. The sounds might be played at higher speed than expected (bit rate issue)
